@@ -272,7 +272,7 @@ print(adaClassify([[5, 5], [0, 0]], weakClassArr).T)
 
 # Difficult Dataset (Horse Colic Dataset)
 # Training Set
-dataArr, labelArr = loadDataSet("drive/MyDrive/horseColicTraining2.txt")
+dataArr, labelArr = loadDataSet("horseColicTraining2.txt")
 weakClassArr, aggClassEst = adaBoostTrainDS(dataArr, labelArr, 40)
 print(weakClassArr, 
       '\n-------------------------------------------------------------------\n', aggClassEst.T, 
@@ -284,7 +284,7 @@ plotROC(aggClassEst.T, labelArr)
 """### 3.2 Test the AdaBoost Model"""
 
 # Test Set
-dataArrTest, labelArrTest = loadDataSet("drive/MyDrive/horseColicTest2.txt")
+dataArrTest, labelArrTest = loadDataSet("horseColicTest2.txt")
 m = shape(dataArrTest)[0]
 predicting10 = adaClassify(dataArrTest, weakClassArr)
 errArr = mat(ones((m, 1)))
